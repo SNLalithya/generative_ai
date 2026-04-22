@@ -1,0 +1,124 @@
+1)mkdir project
+cd project
+git init
+
+echo "Hello" > file.txt
+git status
+git add .
+git commit -m "first commit"
+
+echo "update" >> file.txt
+git add .
+git commit -m "update"
+
+git log
+....................
+
+
+2)git init
+git branch feature-branch
+git checkout feature-branch
+(make changes)
+git add .
+git commit
+
+git checkout main
+(make changes)
+git add .
+git commit
+
+git merge feature-branch
+(resolve conflict if any)
+git add .
+git commit
+
+.....................................
+
+3)git clone <repo-url>
+cd repo
+(create file)
+git add .
+git commit -m "message"
+git push origin main
+
+(make change in GitHub)
+
+git pull origin main
+
+
+
+
+
+.......................
+4)git clone <repo>
+cd repo
+
+(create file)
+git add .
+git commit -m "initial"
+git push origin main
+
+git checkout -b feature-1
+(make changes)
+git add .
+git commit -m "feature work"
+git push origin feature-1
+
+(Create PR in GitHub)
+
+git checkout main
+git pull origin main
+
+git branch -d feature-1
+
+
+...........................
+5)git checkout main
+git pull
+
+git tag v1.0
+git tag -a v1.2 -m "version created"
+
+git tag
+git show v1.0
+
+git push origin v1.0
+git push --tags
+
+git tag -d v1.0
+git push origin -d v1.0
+
+
+
+class BankAccount { 
+    private double balance; 
+ 
+    public BankAccount(double initialBalance) { 
+        if (initialBalance < 0) 
+            throw new IllegalArgumentException("Initial balance cannot be negative"); 
+        this.balance = initialBalance; 
+    } 
+    public void deposit(double amount) { 
+        if (amount <= 0) 
+            throw new IllegalArgumentException("Deposit must be positive"); 
+        balance += amount; 
+    } 
+ 
+    public void withdraw(double amount) { 
+        if (amount <= 0 || amount > balance) 
+            throw new IllegalArgumentException("Invalid withdrawal"); 
+        balance -= amount; 
+    } 
+ 
+   public double getBalance() { 
+        return balance; 
+    } 
+} 
+public class BankService { 
+    public static void main(String[] args) { 
+        BankAccount acc = new BankAccount(1000); 
+        acc.deposit(500); 
+        acc.withdraw(300); 
+        System.out.println("Final Balance: " + acc.getBalance()); 
+    } 
+} 
