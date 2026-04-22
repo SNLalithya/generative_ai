@@ -1,0 +1,70 @@
+mkdir Docker-Java
+cd Docker-Java
+
+Step 2: Create Java file (Grade.java)
+
+Step 3: Create Dockerfile
+
+FROM eclipse-temurin:17-jdk
+WORKDIR /app
+COPY . /app
+RUN javac Grade.java
+CMD ["java", "Grade"]
+
+Step 4: Build Docker image
+
+docker build -t java-app .
+
+Step 5: Login to Docker Hub
+
+docker login
+
+Step 6: Tag Docker image
+
+docker tag java-app yourusername/java-app:v1
+
+Step 7: Push image to Docker Hub
+
+docker push yourusername/java-app:v1
+
+
+
+
+
+
+
+
+
+
+
+
+
+.........................................
+mkdir Docker-Java
+cd Docker-Java
+
+Step 2: Create Java file (Grade.java)
+
+Step 3: Create Dockerfile
+
+FROM eclipse-temurin:17-jdk
+WORKDIR /app
+COPY . /app
+RUN javac Grade.java
+CMD ["java", "Grade"]
+
+Step 4: Build Docker image
+
+docker build -t java-app .
+
+Step 5: Login to Docker Hub
+
+docker login
+
+Step 6: Tag Docker image
+
+docker tag java-app yourusername/java-app:v1
+
+Step 7: Push image to Docker Hub
+
+docker push yourusername/java-app:v1
